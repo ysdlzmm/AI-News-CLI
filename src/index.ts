@@ -23,7 +23,6 @@ async function main() {
 
   const sortedArticles = sortByDate(recentArticles);
 
-  console.log('Generating AI summaries...');
   const summarizedArticles = await summarizeArticles(sortedArticles);
 
   if (shouldSave) {

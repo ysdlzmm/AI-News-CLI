@@ -34,9 +34,8 @@ export function formatDailyReport(articles: Article[]): string {
 
   const list = articles
     .map((article, index) => {
-      const time = article.pubDate.toISOString().replace('T', ' ').substring(0, 19);
       const summary = article.summary ? `\n   - ${article.summary}` : '';
-      return `${index + 1}. **[${article.title}](${article.link})** ${CATEGORY_TAGS[article.category] || ''}\n   - ${article.source} | ${time}${summary}\n`;
+      return `${index + 1}. ${CATEGORY_TAGS[article.category] || ''} ${article.source} │ **[${article.title}](${article.link})**${summary}`;
     })
     .join('\n');
 
@@ -56,11 +55,10 @@ export async function terminalReport(articles: Article[]): Promise<void> {
       const idx2 = i + idx + 1;
       const catColor = CATEGORY_COLORS[article.category] || pc.white;
       const catTag = CATEGORY_TAGS[article.category] || article.category;
-      const title = truncate(article.title, 55);
-      const summary = article.summary ? truncate(article.summary, 75) : '';
+      const title = truncate(article.title, 50);
+      const summary = article.summary ? truncate(article.summary, 70) : '';
 
-      console.log(`${pc.bold(pc.white(idx2.toString()))}. ${catColor(catTag)} ${clickableLink(article.link, title)}`);
-      console.log(`   ${pc.dim(article.source)} | ${pc.dim(article.pubDate.toISOString().replace('T', ' ').substring(0, 19))}`);
+      console.log(`${pc.bold(pc.white(idx2.toString()))}. ${catColor(catTag)} ${pc.dim(article.source)} │ ${clickableLink(article.link, title)}`);
       if (summary) {
         console.log(`   ${pc.dim(summary)}`);
       }
