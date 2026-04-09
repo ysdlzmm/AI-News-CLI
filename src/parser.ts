@@ -10,3 +10,14 @@ export function filterRecentArticles(articles: Article[], hours: number = 24): A
 export function sortByDate(articles: Article[]): Article[] {
   return articles.sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime());
 }
+
+export function deduplicateByUrl(articles: Article[]): Article[] {
+  const seen = new Set<string>();
+  return articles.filter((article) => {
+    if (seen.has(article.link)) {
+      return false;
+    }
+    seen.add(article.link);
+    return true;
+  });
+}
