@@ -10,16 +10,16 @@
         "start": "tsx src/index.ts",
         "build": "tsc"
     },
-    "files": ["src"],                                                                                                                                                                                     
+    "files": ["src"],
     "engines": {
-      "node": ">=18"                                                                                                                                                                                      
-    },                                                             
+      "node": ">=18"
+    },
     "dependencies": {
         "rss-parser": "^3.13.0"
     },
     "devDependencies": {
+        "@types/node": "^20.19.39",
         "tsx": "^4.7.0",
-        "typescript": "^5.4.0",
-        "@types/node": "^20.0.0"
+        "typescript": "^5.9.3"
     }
 }
