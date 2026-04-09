@@ -1,18 +1,25 @@
 {
-  "name": "ai-news-cli",
-  "version": "1.0.0",
-  "type": "module",
-  "description": "AI News Aggregator CLI Tool",
-  "scripts": {
-    "start": "tsx src/index.ts",
-    "build": "tsc"
-  },
-  "dependencies": {
-    "rss-parser": "^3.13.0"
-  },
-  "devDependencies": {
-    "tsx": "^4.7.0",
-    "typescript": "^5.4.0",
-    "@types/node": "^20.0.0"
-  }
+    "name": "ai-news-cli",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "AI News Aggregator CLI Tool",
+    "bin": {
+        "ai-news": "./src/index.ts"
+    },
+    "scripts": {
+        "start": "tsx src/index.ts",
+        "build": "tsc"
+    },
+    "files": ["src"],                                                                                                                                                                                     
+    "engines": {
+      "node": ">=18"                                                                                                                                                                                      
+    },                                                             
+    "dependencies": {
+        "rss-parser": "^3.13.0"
+    },
+    "devDependencies": {
+        "tsx": "^4.7.0",
+        "typescript": "^5.4.0",
+        "@types/node": "^20.0.0"
+    }
 }
