@@ -8,8 +8,7 @@
     },
     "scripts": {
         "start": "tsx src/index.ts",
-        "build": "tsc",
-        "prepublishOnly": "npm run build"
+        "build": "tsc"
     },
     "files": ["src"],
     "engines": {
