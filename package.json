@@ -4,14 +4,14 @@
     "type": "module",
     "description": "AI News Aggregator CLI Tool",
     "bin": {
-        "ai-news-tool": "./src/index.ts"
+        "ai-news-tool": "./src/index.js"
     },
     "scripts": {
         "start": "tsx src/index.ts",
         "build": "tsc"
     },
     "files": [
-        "src"
+        "dist"
     ],
     "engines": {
         "node": ">=18"
