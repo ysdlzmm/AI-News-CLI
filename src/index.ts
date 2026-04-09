@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { fetchAllSources } from './fetcher.js';
 import { filterRecentArticles, sortByDate, deduplicateByUrl } from './parser.js';
 import { summarizeArticles } from './summarizer.js';
